@@ -6,3 +6,7 @@
 # Install Open vSwitch packages
 apt-get install -y openvswitch-common openvswitch-switch
 
+# Install Mininet-wifi
+git clone https://github.com/intrig-unicamp/mininet-wifi
+cd mininet-wifi
+util/install.sh -Wlnfv
