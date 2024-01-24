@@ -1,3 +1,8 @@
 #!/bin/sh
 
-echo "Nothing yet"
+# Check for root
+[ $(id -u) -ne 0 ] && echo "Script must be executed with sudo" && exit
+
+# Install Open vSwitch packages
+apt-get install -y openvswitch-common openvswitch-switch
+
