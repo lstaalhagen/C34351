@@ -14,5 +14,5 @@ do
 done
 
 # Add user to vboxsf group for shared folder
-usermod -aG vboxsf user
+# usermod -aG vboxsf user
 
