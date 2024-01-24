@@ -1,11 +1,7 @@
 #!/bin/sh
 
 # Check for root
-if [ $(id -u) -ne 0 ]
-then
-   echo "This script should be executed as root"
-   exit 0
-fi
+[ $(id -u) -ne 0 ] && echo "Script must be executed with sudo" && exit 0
 
 # Stop/disable some irrelevant services
 for p in avahi-daemon.service avahi-daemon.socket casper.service casper-md5check.service cups.service cups-browsed.service ModemManager.service ufw.service
