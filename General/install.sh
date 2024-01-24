@@ -7,7 +7,7 @@ apt-get update
 apt-get -y upgrade
 
 # Stop/disable some irrelevant services
-for p in avahi-daemon.service avahi-daemon.socket casper.service casper-md5check.service cups.service cups-browsed.service ModemManager.service ufw.service
+for p in avahi-daemon.service avahi-daemon.socket casper.service casper-md5check.service cups.service cups-browsed.service ModemManager.service ufw.service apt-daily-upgrade.timer apt-daily.timer
 do
    systemctl stop ${p}
    systemctl mask ${p}
