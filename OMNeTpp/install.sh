@@ -40,3 +40,6 @@ $BASH -c "source setenv && ./configure && make"
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-ide.desktop
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-shell.desktop
 install -m 0755 ${CURRDIR}/omnetpp /usr/local/bin/omnetpp
+
+# Cleanup apt-get
+apt-get clean
