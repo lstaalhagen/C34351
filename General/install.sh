@@ -13,8 +13,8 @@ do
    systemctl mask ${p}
 done
 
+# Install misc
 apt-get -y install curl
 
 # Add user to vboxsf group for shared folder
 # usermod -aG vboxsf user
-
