@@ -11,5 +11,5 @@ echo $HOMEDIR
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-ide.desktop
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-shell.desktop
 
-echo $(dirname $0)
+echo $(realpath $0)
 # install -m 0755 $(dirname $0)/omnetpp /usr/local/bin/omnetpp
