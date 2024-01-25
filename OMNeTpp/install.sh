@@ -14,10 +14,11 @@ which curl &>/dev/null || apt-get -y install curl
 OMNETVER="omnetpp-6.0.2"
 URL="https://github.com/omnetpp/omnetpp/releases/download/$OMNETVER/$OMNETVER-linux-x86_64.tgz"
 TGZFILE=$(basename $URL)
-cd /home/user
+
+cd /opt
 curl -LG $URL -o $TGZFILE || exit
 tar xzf $TGZFILE
 rm -f $TGZFILE
 cd $OMNETVER
 sed -i 's/WITH_OSG=yes/WITH_OSG=no/g' configure.user
-source setenv && ./configure && make
+./source setenv && ./configure && make
