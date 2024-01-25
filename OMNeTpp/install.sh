@@ -12,11 +12,12 @@ OMNETVER="omnetpp-6.0.2"
 URL="https://github.com/omnetpp/omnetpp/releases/download/$OMNETVER/$OMNETVER-linux-x86_64.tgz"
 TGZFILE=$(basename $URL)
 
-cd /opt
+cd /home/user
 [ -d $OMNETVER ] && rm -rf $OMNETVER
-# curl -LG $URL -o $TGZFILE || exit
+curl -LG $URL -o $TGZFILE || exit
 tar -x -f $TGZFILE -z --no-same-owner
 # rm -f $TGZFILE
+
 cd $OMNETVER
 sed -i 's/WITH_OSG=yes/WITH_OSG=no/g' configure.user
 
