@@ -24,3 +24,11 @@ sed -i 's/WITH_OSG=yes/WITH_OSG=no/g' configure.user
 BASH=$(which bash)
 [ -z "$BASH" ] && echo "Bash must be installed" && exit
 $BASH -c "source setenv && ./configure && make"
+
+USERNAME=$(who am i|cut -d ' ' -f 1)
+HOMEDIR=$(eval echo "~$USERNAME")
+rm -f $HOMEDIR/.local/share/applications/$OMNETVER-ide.desktop
+rm -f $HOMEDIR/.local/share/applications/$OMNETVER-shell.desktop
+
+cp $(dirname $0)/omnetpp /usr/local/bin
+chmod 0755 /usr/local/bin/omnetpp
