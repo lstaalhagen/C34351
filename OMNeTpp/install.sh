@@ -12,7 +12,7 @@ USERNAME=$(who am i|cut -d ' ' -f 1)
 HOMEDIR=$(eval echo "~$USERNAME")
 
 # Prerequisites
-apt-get -y install clang lld gdb bison flex perl swig qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5opengl5-dev libxml2-dev zlib1g-dev doxygen graphviz libwebkit2gtk-4.0-37
+apt-get -y install clang lld gdb bison flex perl swig qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5opengl5-dev libxml2-dev zlib1g-dev doxygen graphviz libwebkit2gtk-4.0-37 python-is-python3
 python -m pip install scipy numpy pandas matplotlib seaborn posix_ipc
 
 # Download and install OMNeT++
