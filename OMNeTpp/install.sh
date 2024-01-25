@@ -14,7 +14,7 @@ TGZFILE=$(basename $URL)
 
 cd /home/user
 [ -d $OMNETVER ] && rm -rf $OMNETVER
-curl -LG $URL -o $TGZFILE || exit
+[ ! -f $TGZFILE ] && curl -LG $URL -o $TGZFILE || exit
 tar -x -f $TGZFILE -z --no-same-owner
 # rm -f $TGZFILE
 
