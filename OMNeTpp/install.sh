@@ -24,7 +24,7 @@ TGZFILE=$(basename $URL)
 # Download and unpack
 cd $HOMEDIR
 [ -d $OMNETVER ] && rm -rf $OMNETVER
-[ ! -f $TGZFILE ] && curl -LG $URL -o $TGZFILE || exit
+[ ! -f $TGZFILE ] && curl -LG $URL -o $TGZFILE
 tar -x -f $TGZFILE -z
 rm -f $TGZFILE
 
