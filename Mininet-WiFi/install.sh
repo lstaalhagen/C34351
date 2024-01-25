@@ -12,3 +12,6 @@ cd mininet-wifi
 util/install.sh -Wlnfv
 cd ..
 rm -rf mininet-wifi
+
+# Cleanup apt-get
+apt-get clean
