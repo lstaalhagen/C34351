@@ -29,6 +29,4 @@ USERNAME=$(who am i|cut -d ' ' -f 1)
 HOMEDIR=$(eval echo "~$USERNAME")
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-ide.desktop
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-shell.desktop
-
-cp $(dirname $0)/omnetpp /usr/local/bin
-chmod 0755 /usr/local/bin/omnetpp
+install -m 0755 $(dirname $0)/omnetpp /usr/local/bin/omnetpp
