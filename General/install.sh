@@ -19,3 +19,7 @@ apt-get -y install curl build-essential
 
 # Add user to vboxsf group for shared folder
 # usermod -aG vboxsf user
+
+# Cleanup apt-get
+apt-get clean
+
