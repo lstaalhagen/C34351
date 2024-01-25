@@ -16,4 +16,5 @@ curl -LG $URL -o $TGZFILE || exit
 tar xzf $TGZFILE
 rm -f $TGZFILE
 cd $OMNETVER
+sed -i 's/WITH_OSG=yes/WITH_OSG=no/g' configure.user
 source setenv && ./configure && make
