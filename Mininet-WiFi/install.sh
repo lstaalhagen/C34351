@@ -10,4 +10,5 @@ apt-get install -y openvswitch-common openvswitch-switch
 git clone https://github.com/intrig-unicamp/mininet-wifi
 cd mininet-wifi
 util/install.sh -Wlnfv
+cd ..
 rm -rf mininet-wifi
