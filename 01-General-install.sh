@@ -15,7 +15,7 @@ do
 done
 
 # Install misc
-apt-get -y install curl build-essential
+apt-get -y install curl build-essential gcc-12 wireshark
 
 # Add user to vboxsf group for shared folder
 # usermod -aG vboxsf user
