@@ -7,7 +7,7 @@
 apt-get install -y openvswitch-common openvswitch-switch
 
 # Hack for libssl3 version confusion
-apt-get install -y libssl3=3.0.2-0ubuntu1.12
+apt-get install -y --allow-downgrades libssl3=3.0.2-0ubuntu1.12
 
 # Install Mininet-wifi
 git clone https://github.com/intrig-unicamp/mininet-wifi
