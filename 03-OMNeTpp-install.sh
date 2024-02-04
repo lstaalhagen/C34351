@@ -12,7 +12,7 @@ USERNAME=$(who am i|cut -d ' ' -f 1)
 HOMEDIR=$(eval echo "~$USERNAME")
 
 # Prerequisites
-apt-get -y install clang lld gdb bison flex perl swig qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools \
+apt-get -y install gdb bison flex perl swig qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools \
                    libqt5opengl5-dev libxml2-dev zlib1g-dev doxygen graphviz libwebkit2gtk-4.0-37 \
                    python3-pip python-is-python3 \
                    python3-scipy python3-numpy python3-matplotlib python3-pandas python3-seaborn python3-posix-ipc
@@ -31,6 +31,7 @@ rm -f $TGZFILE
 cd $OMNETVER
 
 sed -i 's/WITH_OSG=yes/WITH_OSG=no/g' configure.user
+sed -i 's/PREFER_CLANG=yes/PREFER_CLANG=no/g' configure.user
 
 BASH=$(which bash)
 [ -z "$BASH" ] && echo "Bash must be installed" && exit
