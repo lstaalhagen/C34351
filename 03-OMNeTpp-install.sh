@@ -34,7 +34,7 @@ sed -i 's/PREFER_CLANG=yes/PREFER_CLANG=no/g' configure.user
 
 BASH=$(which bash)
 [ -z "$BASH" ] && echo "Bash must be installed" && exit
-sudo -u $USERNAME -R $HOMEDIR "$BASH -c \"cd $OMNETVER; source setenv && ./configure && make\""
+sudo -u $USERNAME "$BASH -c \"cd $HOMEDIR/$OMNETVER; source setenv && ./configure && make\""
 
 # Cleanup
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-ide.desktop
