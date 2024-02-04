@@ -31,10 +31,11 @@ rm -f $TGZFILE
 cd $OMNETVER
 sed -i 's/WITH_OSG=yes/WITH_OSG=no/g' configure.user
 sed -i 's/PREFER_CLANG=yes/PREFER_CLANG=no/g' configure.user
+sed -i 's/PREFER_LLD=yes/PREFER_LLD=no/g' configure.user
 
 BASH=$(which bash)
 [ -z "$BASH" ] && echo "Bash must be installed" && exit
-sudo -u $USERNAME "$BASH -c \"cd $HOMEDIR/$OMNETVER; source setenv && ./configure && make\""
+sudo -u $USERNAME -D $HOMEDIR/$OMNETVER -- $BASH -c "source setenv && ./configure && make\""
 
 # Cleanup
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-ide.desktop
