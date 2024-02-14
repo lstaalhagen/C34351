@@ -29,8 +29,8 @@ def topology(args):
     net.configureWifiNodes()
 
     ###################################################################
-	# ADD STATEMENTS HERE FOR WIRED DEVICES, E.G., HOSTS AND SWITCHES #
-	###################################################################
+    # ADD STATEMENTS HERE FOR WIRED DEVICES, E.G., HOSTS AND SWITCHES #
+    ###################################################################
     info("*** Creating wired hosts\n")   # Comment-out if no wired hosts
     # insert code here
 
