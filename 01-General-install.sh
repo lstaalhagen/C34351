@@ -31,6 +31,7 @@ update-grub
 # Set initial font for xterm
 XRESOURCES=$HOME/.Xresources
 touch $XRESOURCES
+sed -i 's/^xterm*allowTitleOps:.*/xterm*allowTitleOps: false/g' $XRESOURCES
 grep -q -E -e "^xterm*faceName" $XRESOURCES
 if [ $? -ne 0 ]; then
    echo "xterm*faceName: Monospace" > $HOME/.Xresources
