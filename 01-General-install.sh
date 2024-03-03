@@ -28,3 +28,12 @@ sed -i 's/GRUB_TIMEOUT_STYLE=.*/GRUB_TIMEOUT_STYLE=menu/g' /etc/default/grub
 sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=2/g' /etc/default/grub
 update-grub
 
+# Set initial font for xterm
+XRESOURCES=$HOME/.Xresources
+touch $XRESOURCES
+grep -q -E -e "^xterm*faceName" $XRESOURCES
+if [ $? -ne 0 ]; then
+   echo "xterm*faceName: Monospace" > $HOME/.Xresources
+   echo "xterm*faceSize: 14" >> $HOME/.Xresources
+   xrdb -merge $HOME/.Xresources
+fi
