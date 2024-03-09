@@ -2,6 +2,8 @@
 
 # Check for root 
 [ $(id -u) -ne 0 ] && echo "Script must be executed with sudo" && exit
+REALUSER=${SUDO_USER}
+[ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
 # Install additional packages for both MQTT and CoAP
 apt-get update
@@ -38,3 +40,11 @@ if [ $? -ne 0 ]; then
   echo '  export PS1="$(ip netns identify):\w# "' >> /root/.bashrc
   echo 'fi' >> /root/.bashrc
 fi
+
+# Make directories and copy necessary scripts
+mkdir -p /home/${REALUSER}/MQTT
+cp netgenerate.sh clearnet.sh mosquitto.conf /home/${REALUSER}/MQTT
+chown -R ${REALUSER}: /home/${REALUSER}/MQTT
+mkdir -p /home/${REALUSER}/CoAP
+cp netgenerate.sh clearnet.sh /home/${REALUSER}/CoAP
+chown -R ${REALUSER}: /home/${REALUSER}/CoAP
