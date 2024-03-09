@@ -13,4 +13,5 @@ if [ $? -ne 0 ]; then
   echo -e "${REALUSER}\tALL = NOPASSWD: ALL" >> /etc/sudoers
 fi
 
-#
+# Create a directory for a shared folder
+mkdir -p /home/${REALUSER}/Shared
