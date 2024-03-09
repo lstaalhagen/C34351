@@ -8,7 +8,7 @@ OMNETVER="omnetpp-6.0.2"
 
 # Save current directory for later and other stuff
 CURRDIR=$(realpath .)
-USERNAME=$(who am i|cut -d ' ' -f 1)
+USERNAME=$(who am i|cut -d ' ' -f 1)   # Maybe replace with $SUDO_USER ???
 HOMEDIR=$(eval echo "~$USERNAME")
 
 # Prerequisites
