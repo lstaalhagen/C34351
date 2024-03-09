@@ -9,7 +9,7 @@ REALUSER=${SUDO_USER}
 
 # Add (real) users to sudoers file
 grep -q -e "^${REALUSER}" /etc/sudoers
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
   echo -e "${REALUSER}\tALL = NOPASSWD: ALL" >> /etc/sudoers
 fi
 
