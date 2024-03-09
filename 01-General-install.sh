@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Check for root
 [ $(id -u) -ne 0 ] && echo "Script must be executed with sudo" && exit 0
@@ -18,9 +18,6 @@ done
 
 # Install misc
 apt-get -y install curl build-essential gcc-12 wireshark
-
-# Add user to vboxsf group for shared folder
-# usermod -aG vboxsf user
 
 # Cleanup apt-get
 apt-get clean
