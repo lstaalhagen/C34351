@@ -7,7 +7,7 @@
 REALUSER=${SUDO_USER}
 [ -z "${REALUSER}" ] && echo "Environment variable $SUDO_USER not set as expected" && exit
 
-# Add (real) users to sudoers file
+# Add (real) user to sudoers file
 grep -q -e "^${REALUSER}" /etc/sudoers
 if [ $? -ne 0 ]; then
   echo -e "${REALUSER}\tALL = NOPASSWD: ALL" >> /etc/sudoers
