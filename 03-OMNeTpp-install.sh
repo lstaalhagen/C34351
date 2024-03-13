@@ -40,7 +40,7 @@ sudo -u $USERNAME -D $HOMEDIR/$OMNETVER "source setenv && ./configure && make"
 # Cleanup
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-ide.desktop
 rm -f $HOMEDIR/.local/share/applications/$OMNETVER-shell.desktop
-install -m 0755 ${CURRDIR}/Scripts/omnetpp.sh /usr/local/bin/omnetpp
+install -m 0755 ${CURRDIR}/Files/omnetpp.sh /usr/local/bin/omnetpp
 
 # Cleanup apt-get
 apt-get clean
