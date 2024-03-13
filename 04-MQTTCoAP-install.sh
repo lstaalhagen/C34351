@@ -43,7 +43,7 @@ fi
 
 # Make directories and copy necessary scripts
 mkdir -p /home/${REALUSER}/MQTT
-cp netgenerate.sh clearnet.sh mosquitto.conf /home/${REALUSER}/MQTT
+cp netgenerate.sh clearnet.sh mosquitto.conf mqtt-init.sh /home/${REALUSER}/MQTT
 chown -R ${REALUSER}: /home/${REALUSER}/MQTT
 mkdir -p /home/${REALUSER}/CoAP
 cp netgenerate.sh clearnet.sh /home/${REALUSER}/CoAP
