@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 OMNETVER="omnetpp-6.0.2"
 
