@@ -19,6 +19,7 @@ git clone https://github.com/obgm/libcoap
 cd libcoap
 ./autogen.sh
 ./configure --enable-examples --enable-documentation
+# ./configure --disable-manpages
 make
 make install
 cd ..
