@@ -10,7 +10,7 @@ apt-get -y upgrade
 apt-get -y autoremove
 
 # Stop/disable some irrelevant services
-for p in avahi-daemon.service avahi-daemon.socket cups.service cups-browsed.service ModemManager.service ufw.service apt-daily-upgrade.timer apt-daily.timer
+for p in avahi-daemon.service avahi-daemon.socket cups.service cups-browsed.service ModemManager.service ufw.service apt-daily-upgrade.timer apt-daily.timer unattended-upgrades.service
 do
    systemctl stop ${p}
    systemctl mask ${p}
